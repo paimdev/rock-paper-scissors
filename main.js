@@ -37,7 +37,10 @@ function round(playerSelection, computerSelection) {
         return `You Lose! ${computerSelection} beats ${playerSelection}`
         }
 //  else
+    else {
 //  return checkWin's value
+        return checkWin();
+        }
     }
 
 //  make the function checkWin that takes two parameters (playerSelection and computerSelection)
@@ -88,6 +91,5 @@ function checkWin(playerSelection, computerSelection) {
         case playerSelection == "scissor" && computerSelection == "scissor":
 //  return "It's a tie"
         return "It's a tie"
-        break;
     }
 }
