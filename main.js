@@ -19,7 +19,22 @@ function computerPlay() {
 }
 
 //  make a function that plays a round and have two paramethers (playerSelection and computerSelection)
+function round(playerSelection, computerSelection) {
 //  define the variable computerSelection to be the return of the function computerPlay
+    let computerSelection = computerPlay();
 //  define the variable playerSelection and asks for it's value to the user, makes the user input case insensitive
+    let playerSelection = prompt("Chose one: rock, paper or scissor:").toLowerCase;
 //  use a function to check which one won
-//  return the result of the round in a string like (""You Lose! Paper beats Rock"")
+        checkWin(playerSelection, computerSelection);
+//  if checkWin == true then
+    if (checkWin() == true) {
+//  return the result of the round in a string like ("You Win! Paper beats Rock")
+        return `You Win! ${playerSelection} beats ${computerSelection}`
+        }
+//  if checkWin == false then
+    if (checkWin() == false) {
+//  return the result of the round in a string like ("You Lose! Paper beats Rock")
+        return `You Lose! ${computerSelection} beats ${playerSelection}`
+        }
+    }
+
