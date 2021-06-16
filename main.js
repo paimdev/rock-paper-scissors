@@ -36,5 +36,26 @@ function round(playerSelection, computerSelection) {
 //  return the result of the round in a string like ("You Lose! Paper beats Rock")
         return `You Lose! ${computerSelection} beats ${playerSelection}`
         }
+//  else
+//  return checkWin's value
     }
 
+//  make the function checkWin that takes two parameters (playerSelection and computerSelection)
+//  if playerSelection == "rock" and computerSelection == "rock"
+//  return "It's a tie"
+//  if playerSelection == "rock" and computerSelection == "paper"
+//  return false
+//  if playerSelection == "rock" and computerSelection == "scissor"
+//  return true
+//  if playerSelection == "paper" and computerSelection == "rock"
+//  return true
+//  if playerSelection == "paper" and computerSelection == "paper"
+//  return "It's a tie"
+//  if playerSelection == "paper" and computerSelection == "scissor"
+//  return false
+//  if playerSelection == "scissor" and computerSelection == "rock"
+//  return false
+//  if playerSelection == "scissor" and computerSelection == "paper"
+//  return true
+//  if playerSelection == "scissor" and computerSelection == "scissor"
+//  return "It's a tie"
