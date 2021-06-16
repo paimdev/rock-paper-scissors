@@ -41,21 +41,53 @@ function round(playerSelection, computerSelection) {
     }
 
 //  make the function checkWin that takes two parameters (playerSelection and computerSelection)
+function checkWin(playerSelection, computerSelection) {
+//  make a switch to check for the cases
+    switch (true) {  
 //  if playerSelection == "rock" and computerSelection == "rock"
+    case playerSelection == "rock" && computerSelection == "rock":
 //  return "It's a tie"
+        return "It's a tie";
+        break;
 //  if playerSelection == "rock" and computerSelection == "paper"
+    case playerSelection == "rock" && computerSelection == "paper":
 //  return false
+        return false;
+        break;
 //  if playerSelection == "rock" and computerSelection == "scissor"
+    case playerSelection == "rock" && computerSelection == "scissor":
 //  return true
+        return true;
+        break;
 //  if playerSelection == "paper" and computerSelection == "rock"
+    case playerSelection == "paper" && computerSelection == "rock":
 //  return true
+        return true;
+        break;
 //  if playerSelection == "paper" and computerSelection == "paper"
+    case playerSelection == "paper" && computerSelection == "paper":
 //  return "It's a tie"
+        return "It's a tie";
+        break;
 //  if playerSelection == "paper" and computerSelection == "scissor"
+    case playerSelection == "rock" && computerSelection == "rock":
 //  return false
+        return false;
+        break;
 //  if playerSelection == "scissor" and computerSelection == "rock"
+    case playerSelection == "scissor" && computerSelection == "rock":
 //  return false
+        return false;
+        break;
 //  if playerSelection == "scissor" and computerSelection == "paper"
+        case playerSelection == "scissor" && computerSelection == "paper":
 //  return true
+        return true;
+        break;
 //  if playerSelection == "scissor" and computerSelection == "scissor"
+        case playerSelection == "scissor" && computerSelection == "scissor":
 //  return "It's a tie"
+        return "It's a tie"
+        break;
+    }
+}
