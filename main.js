@@ -15,19 +15,21 @@ function computerPlay() {
 function round(playerSelection, computerSelection) {
     computerSelection = computerPlay();
     playerSelection = prompt("Chose one: rock, paper or scissor:").toLowerCase();
-    
+
     let resultOfRound = checkWin(playerSelection, computerSelection);
         if (resultOfRound == true) {
-            return `You Win! ${playerSelection} beats ${computerSelection}`
+            console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+            return true;
             }
         if (resultOfRound == false) {
-            return `You Lose! ${computerSelection} beats ${playerSelection}`
+            console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+            return false;
             }
         else {
-        return resultOfRound;
+            let tie = console.log("It's a tie")
+            return tie;
         }
     }
-console.log(round())
 
 function checkWin(playerSelection, computerSelection) {
     switch (true) {  
@@ -65,7 +67,22 @@ function checkWin(playerSelection, computerSelection) {
             break;
 
         case playerSelection == "scissor" && computerSelection == "scissor":
-            return "It's a tie"
+            return "tie"
         }
     }
     
+function game() {
+    let pointsUser = 0;
+    let pointsComputer = 0;
+    for (let i = 0; i < 5; i++) {
+        let roundResult = round();
+        if (roundResult === true) {
+            pointsUser++;
+        } else if (roundResult === false) {
+            pointsComputer++;
+        }
+    }
+    console.log(pointsUser > pointsComputer ? `You Won the game with ${pointsUser} points!!` : `You Lost the game with ${pointsUser} points!`);
+}
+
+game();
