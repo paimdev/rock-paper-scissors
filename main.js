@@ -1,4 +1,13 @@
-result = document.querySelector('.result');
+const result = document.querySelector('.result');
+const scores = document.querySelector('.scores');
+let scorePlayer = 0;
+let scoreComputer = 0;
+
+if (scorePlayer == 5) {
+    result.textContent = 'The Player is the winner!!';
+} else if (scoreComputer == 5) {
+    result.textContent = 'The computer is the winner!';
+}
 
 function computerPlay() {
     let randomNumber = Math.random() * 10;
@@ -20,16 +29,34 @@ function round(playerSelection, computerSelection) {
 
     let resultOfRound = checkWin(playerSelection, computerSelection);
         if (resultOfRound == true) {
+            scorePlayer++;
             result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
-            return true;
+            scores.textContent = `Player's score: ${scorePlayer}
+            Computer's score: ${scoreComputer}`;
             }
         else if (resultOfRound == false) {
+            scoreComputer++;
             result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
-            return false;
+            scores.textContent = `Player's score: ${scorePlayer}
+            Computer's score: ${scoreComputer}`;
         }
         else {
-            result.textContent = `It's a tie!`
+            result.textContent = `It's a tie!`;
+            scores.textContent = `Player's score: ${scorePlayer}
+            Computer's score: ${scoreComputer}`;
         }
+        if (scorePlayer == 5) {
+            result.textContent = 'The Player is the winner!!';
+            scores.textContent = ''
+            scorePlayer = 0;
+            scoreComputer = 0;
+        } else if (scoreComputer == 5) {
+            result.textContent = 'The computer is the winner!';
+            scores.textContent = ''
+            scorePlayer = 0;
+            scoreComputer = 0;
+        }
+
 }
 
 function checkWin(playerSelection, computerSelection) {
