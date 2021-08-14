@@ -1,3 +1,5 @@
+result = document.querySelector('.result');
+
 function computerPlay() {
     let randomNumber = Math.random() * 10;
         if (randomNumber <= 3) {
@@ -18,16 +20,15 @@ function round(playerSelection, computerSelection) {
 
     let resultOfRound = checkWin(playerSelection, computerSelection);
         if (resultOfRound == true) {
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+            result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
             return true;
             }
         else if (resultOfRound == false) {
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+            result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
             return false;
         }
         else {
-            tie = console.log("It's a tie");
-            return tie;
+            result.textContent = `It's a tie!`
         }
 }
 
@@ -71,17 +72,17 @@ function checkWin(playerSelection, computerSelection) {
         }
 }
 
-const buttonRock = document.querySelector('#rock');
+const buttonRock = document.querySelector('.rock');
 buttonRock.addEventListener('click', () => {
     round("rock");
 });
 
-const buttonPaper = document.querySelector('#paper');
+const buttonPaper = document.querySelector('.paper');
 buttonPaper.addEventListener('click', () => {
     round("paper");
 });
 
-const buttonScissor = document.querySelector('#scissor');
+const buttonScissor = document.querySelector('.scissor');
 buttonScissor.addEventListener('click', () => {
     round("scissor");
 });
