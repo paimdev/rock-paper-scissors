@@ -47,12 +47,12 @@ function round(playerSelection, computerSelection) {
         }
         if (scorePlayer == 5) {
             result.textContent = 'The Player is the winner!!';
-            scores.textContent = ''
+            scores.textContent = '';
             scorePlayer = 0;
             scoreComputer = 0;
         } else if (scoreComputer == 5) {
             result.textContent = 'The computer is the winner!';
-            scores.textContent = ''
+            scores.textContent = '';
             scorePlayer = 0;
             scoreComputer = 0;
         }
