@@ -3,12 +3,6 @@ const scores = document.querySelector('.scores');
 let scorePlayer = 0;
 let scoreComputer = 0;
 
-if (scorePlayer == 5) {
-    result.textContent = 'The Player is the winner!!';
-} else if (scoreComputer == 5) {
-    result.textContent = 'The computer is the winner!';
-}
-
 function computerPlay() {
     let randomNumber = Math.random() * 10;
         if (randomNumber <= 3) {
