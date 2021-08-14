@@ -4,32 +4,32 @@ function computerPlay() {
             return "rock";
         }
 
-        if (randomNumber >= 3 && randomNumber < 6) {
+        else if (randomNumber >= 3 && randomNumber < 6) {
             return "paper";
 
         }
-        if (randomNumber > 6 && randomNumber < 9)
-        return "scissor";
+        else if (randomNumber > 6 && randomNumber < 9) {
+            return "scissor";
+        }
 }
 
 function round(playerSelection, computerSelection) {
     computerSelection = computerPlay();
-    playerSelection = prompt("Chose one: rock, paper or scissor:").toLowerCase();
 
     let resultOfRound = checkWin(playerSelection, computerSelection);
         if (resultOfRound == true) {
             console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
             return true;
             }
-        if (resultOfRound == false) {
+        else if (resultOfRound == false) {
             console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
             return false;
-            }
+        }
         else {
-            let tie = console.log("It's a tie")
+            tie = console.log("It's a tie");
             return tie;
         }
-    }
+}
 
 function checkWin(playerSelection, computerSelection) {
     switch (true) {  
@@ -69,20 +69,19 @@ function checkWin(playerSelection, computerSelection) {
         case playerSelection == "scissor" && computerSelection == "scissor":
             return "tie"
         }
-    }
-    
-function game() {
-    let pointsUser = 0;
-    let pointsComputer = 0;
-    for (let i = 0; i < 5; i++) {
-        let roundResult = round();
-        if (roundResult === true) {
-            pointsUser++;
-        } else if (roundResult === false) {
-            pointsComputer++;
-        }
-    }
-    console.log(pointsUser > pointsComputer ? `You Won the game with ${pointsUser} points!!` : `You Lost the game with ${pointsUser} points!`);
 }
 
-game();
+const buttonRock = document.querySelector('#rock');
+buttonRock.addEventListener('click', () => {
+    round("rock");
+});
+
+const buttonPaper = document.querySelector('#paper');
+buttonPaper.addEventListener('click', () => {
+    round("paper");
+});
+
+const buttonScissor = document.querySelector('#scissor');
+buttonScissor.addEventListener('click', () => {
+    round("scissor");
+});
